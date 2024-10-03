@@ -338,7 +338,7 @@
         
         // On Click Sound
         var obj = document.createElement("audio");
-            obj.src = "assets/audio/click.wav";
+            // obj.src = "assets/audio/click.wav";
             obj.volume = 1;
             obj.autoPlay = false;
             obj.preLoad = true;
