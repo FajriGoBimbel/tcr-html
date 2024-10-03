@@ -33,6 +33,14 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    /* min-height: 100vh; */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2),          /* Black with 20% transparency */
+        rgba(58, 21, 21, 0.2) 34%,   /* #3a1515 with 20% transparency */
+        rgba(255, 0, 0, 0.2) 65%,     /* #FF0000 with 20% transparency */
+        rgba(255, 83, 83, 0.2) 82%    /* #ff5353 with 20% transparency */
+      );
 }
 
 .hero-section:before {
@@ -177,8 +185,17 @@
 /*** 1.2 - Hero Elements ***/
 .hero-element {
     position: relative;
+    margin-top: 80px;
+   /* Shifts the element left by half of its width */
 }
-
+.logo-hero {
+    width: 600px;
+    z-index: -1;
+    position: absolute;
+    top: -10%;            /* Move the logo to the center vertically */
+    left: 50%;           /* Move the logo to the center horizontally */
+    transform: translate(-50%, -50%); /* Center the logo perfectly */
+}
 .hero-element .shape-wrap {
     width: 50%;
     height: 100%;
@@ -205,8 +222,8 @@
       #000000, /* Black */
       #000000, /* Black */
       #000000, 
-      #00b3ff, 
-      #0cd7e8
+      #DB1717, 
+      #ce3232
     );
     
 
@@ -1659,9 +1676,9 @@ background-image: linear-gradient(
 }
 
 .subscribe-form .form-control {
-    background-color: rgba(12, 12, 53, 0.9);
+    background-color: rgba(190, 22, 22, 0.9);
     color: #fff;
-    height: 60px;
+    height: 50px;
     border-radius: 2px;
     outline: none;
     border: 2px solid rgba(152, 65, 255, 0.3);
@@ -1753,3 +1770,8 @@ background-image: linear-gradient(
 .copyright-wrap p {
     margin: 0
 }
+
+.custom-gradient {
+    background: linear-gradient(to bottom, #000, #3a1515 34%, #FF0000 65%, #ff5353 82%);
+  }
+  
