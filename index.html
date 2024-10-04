@@ -125,6 +125,71 @@
     color: black;
     box-shadow: 0px 0px 10px #ffd700;
   }
+
+  .pelaksanaan {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+
+  }
+
+  .pelaksanaan td {
+    color: white;
+    border: 1px solid white;
+    /* padding: 8px; */
+  }
+
+  .pelaksanaan tr:nth-child(even) {
+    background-color: #333;
+  }
+
+  .pelaksanaan tr:nth-child(odd) {
+    background-color: #444;
+  }
+
+  .subscribe-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subscribe-form .btn-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .subscribe-form .form-control {
+    width: 200px;
+    margin-right: 180px;
+    /* Default margin for desktop view */
+  }
+
+  /* Mobile view adjustments */
+  @media (max-width: 768px) {
+    .subscribe-form {
+      flex-direction: column;
+      /* Stack items vertically */
+    }
+
+    .subscribe-form .btn-group {
+      flex-direction: column;
+      /* Stack the input and button vertically */
+    }
+
+    .subscribe-form .form-control {
+      width: 100%;
+      /* Make the input take up full width */
+      margin-right: 0;
+      /* Remove margin for mobile view */
+      margin-bottom: 10px;
+      /* Add margin below the input for spacing */
+    }
+
+    .subscribe-form .default-btn {
+      width: 100%;
+      /* Make the button take up full width */
+    }
+  }
 </style>
 
 <body>
@@ -205,10 +270,7 @@
               E-Sport. Kompetisi ini menjadi kompetisi pertama di Indonesia!
               The Champion Race dilaksanakan dalam beberapa putaran penyisihan
               yang tersebar di empat wilayah di Indonesia: Jawa, Sumatera,
-              Kalimantan-Sulawesi, dan Bali-Lombok-Ambon. Puluhan ribu siswa
-              GO turut serta dalam kompetisi ini, hingga pada akhirnya setelah
-              dilakukan dua kali babak penyisihan masing-masing wilayah punya
-              juaranya sendiri. Para pemenang dari setiap wilayah lalu
+              Kalimantan-Sulawesi, dan Bali-Lombok-Ambon. Para pemenang dari setiap wilayah
               diberangkatkan ke Bandung untuk bertanding langsung di babak
               final.
             </p>
@@ -223,6 +285,112 @@
     </div>
   </section>
   <section class="watch-live-section padding-bottom">
+    <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
+      <h2>Skema Pelaksanaan <br><span>The champion race 2025</span></h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 sm-padding wow fade-in-bottom" data-wow-delay="200ms">
+          <div class="promo-item">
+            <div class="promo-content">
+              <!-- <img class="promo-icon" src="assets/img/promo-icon-1.png" alt="thumb"> -->
+              <h3>Babak Penyisihan</h3>
+              <p>Babak penyisihan dapat diikuti oleh seluruh siswa GO se-Indonesia dengan syarat telah mengerjakan.
+                Babak penyisihan dilakukan 3 kali, masing-masing untuk mencari 5 pemenang.
+                minimal 50% dari total target pengerjaan soal dan minimal 75% benar.</p>
+              <p>
+              <table class="table pelaksanaan">
+                <tr>
+                  <td>Babak Penyisihan 1 </td>
+                  <td>26 Oktober 2024</td>
+                </tr>
+                <tr>
+                  <td>Babak Penyisihan 2 </td>
+                  <td>14 Desember 2024</td>
+                </tr>
+                <tr>
+                  <td>Babak Penyisihan 3 </td>
+                  <td>8 Februari 2025</td>
+                </tr>
+              </table>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 sm-padding wow fade-in-bottom" data-wow-delay="400ms">
+          <div class="promo-item">
+            <div class="promo-content">
+              <!-- <img class="promo-icon" src="assets/img/promo-icon-2.png" alt="thumb"> -->
+              <h3>Babak Semi Final Fase 1</h3>
+              <p>Babak Semi Final diadakan 2 fase untuk mencari 1 perwakilan per wilayah (kategoru SD, SMP, dan SMA)</p>
+              <table class="table pelaksanaan">
+                <tr>
+                  <td>Semi Final Fase 1:
+                    <br> 15 Februari 2025
+                    <br> Pukul 14.00 s.d 16.00 WIB
+                    <br> Melalui menu racing GO Expert (Zoom)
+
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 sm-padding wow fade-in-bottom" data-wow-delay="600ms">
+          <div class="promo-item">
+            <div class="promo-content">
+              <!-- <img class="promo-icon" src="assets/img/promo-icon-3.png" alt="thumb"> -->
+              <h3>Babak Semi Final Fase 2</h3>
+              <p>Diadakan secara tatap muka di setiap wilayah secara <i>real time</i> menggunakan aplikasi <i>The
+                  Champion Race</i> untuk mendapatkan Top 1 dari kategori SD,SMP,dan SMA.</p>
+              <table class="table pelaksanaan">
+                <tr>
+                  <td>22 Februari 2025 </td>
+                  <td>Wilayah Jawa Barat, Jakarta, Banten</td>
+                </tr>
+                <tr>
+                  <td>23 Februari 2025 </td>
+                  <td>Wilayah Jawa Tengah & Yogyakarta</td>
+                </tr>
+                <tr>
+                  <td>1 Maret 2025 </td>
+                  <td>Wilayah Jawa Timur</td>
+                </tr>
+                <tr>
+                  <td>2 Maret 2025 </td>
+                  <td>Wilayah Kalimantan & Sulawesi</td>
+                </tr>
+                <tr>
+                  <td>8 Maret 2025 </td>
+                  <td>Wilayah Sumatera, <br>Kepulauan Riau Bangka Belitung </td>
+                </tr>
+                <tr>
+                  <td>9 Maret 2025 </td>
+                  <td>Wilayah Bali, Lombok, Ambon</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 sm-padding wow fade-in-bottom" data-wow-delay="600ms">
+          <div class="promo-item">
+            <div class="promo-content">
+              <h3>Babak Grand Final</h3>
+              <img class="promo-icons" src="assets/img/tcr/logo-champion-race.png" style="max-height: 250px;"
+                alt="thumb">
+              <p>Grand Final TCR 2025 akan diadakan di <strong>Bandung</strong> pada tanggal <strong>22 Maret
+                  2025</strong> secara tatap muka dan real time menggunakan aplikasi The Champion Race untuk mendapatkan
+                Top 3 dari kategori SD, SMP, dan SMA</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="watch-live-section padding-bottom">
     <div class="container">
       <div class="section-heading mb-40 text-center wow fade-in-bottom" data-wow-delay="200ms">
         <!-- <h3>Watch The Gameplay</h3> -->
@@ -230,8 +398,7 @@
         <p>
           Kompetisi pertama di Indonesia! dengan konsep selayaknya E-Sport
           <br />bertanding satu sama
-          lain untuk mengerjakan soal secara real-time melalui aplikasi GO
-          Expert
+          lain untuk mengerjakan soal secara real-time melalui aplikasi The Champion Race
         </p>
       </div>
       <div class="carousel-wrap">
@@ -271,6 +438,7 @@
     </div>
   </section>
   <!-- /.watch-live-section -->
+
 
   <section class="team-section padding-bottom">
     <div class="container">
