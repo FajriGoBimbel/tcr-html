@@ -872,6 +872,7 @@ background-image: linear-gradient(
 /*** 7.1 - Team Shape ***/
 .team-thumb {
     position: relative;
+    max-height: 400px;
 }
 
 .team-thumb .shape-wrap {
