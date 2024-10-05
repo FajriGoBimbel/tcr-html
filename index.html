@@ -645,6 +645,7 @@
         $('#modalMessage').html('No registrasi yang kamu masukan salah')
         $('.tiket-image').hide();
         $('.failed-tiket-image').show();
+        $('#claim-button').hide();
         return false;
       }
       if (noRegistrasi == 123456) {
@@ -657,6 +658,8 @@
         $('#modalMessage').html(' Maaf, kamu tidak lolos ke babak selanjutnya');
         $('.tiket-image').hide();
         $('.failed-tiket-image').show();
+        $('#claim-button').hide();
+
       }
       $('#ticketModal').fadeIn();
     });
