@@ -309,7 +309,6 @@
               <p>Babak penyisihan dapat diikuti oleh seluruh siswa GO se-Indonesia dengan syarat telah mengerjakan
                 <strong>minimal 50% dari total target pengerjaan soal </strong> dan <strong>minimal 75% benar</strong>
                 Babak penyisihan dilakukan 3 kali, masing-masing untuk mencari 5 pemenang.
-                .
               </p>
               <p>
               <table class="table pelaksanaan">
@@ -601,6 +600,7 @@
       </div>
       <div class="modal-body">
         <img src="assets/img/tiket.jpg" alt="Ticket" class="tiket-image" style="display: none;" />
+        <img src="assets/img/failed.png" alt="Ticket" class="failed-tiket-image" style="display: none;" />
         <p id="modalMessage"></p>
       </div>
       <div class="modal-footer">
@@ -644,15 +644,19 @@
       if (noRegistrasi == '') {
         $('#modalMessage').html('No registrasi yang kamu masukan salah')
         $('.tiket-image').hide();
+        $('.failed-tiket-image').show();
         return false;
       }
       if (noRegistrasi == 123456) {
         $('#modalMessage').html(' Selamat! kamu lolos ke babak selanjutnya. Dan berhak mendapatkan hadiah. Download tiket untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekat mu');
         $('.tiket-image').show();
+        $('.failed-tiket-image').hide();
         $('#claim-button').show();
 
       } else {
         $('#modalMessage').html(' Maaf, kamu tidak lolos ke babak selanjutnya');
+        $('.tiket-image').hide();
+        $('.failed-tiket-image').show();
       }
       $('#ticketModal').fadeIn();
     });
