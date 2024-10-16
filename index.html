@@ -226,12 +226,12 @@
         <div class="section-heading">
           <h2>Are you the next <span>Champion? </span></h2>
         </div>
-        <!-- <form action="#" class="subscribe-form">
+        <form action="#" class="subscribe-form">
           <div class="btn-group">
             <input class="form-control" type="text" name="noRegistrsi" placeholder="Masukan Noreg" id="noRegistrasi" />
             <button class="default-btn" id="openModalButton">Check Hasil</button>
           </div>
-        </form> -->
+        </form>
         <div class="hero-element">
           <img class="logo-hero" src="assets/img/tcr/logo-champion-race.png"
             alt="The Champion Race Ganesha Operation" />
@@ -641,27 +641,48 @@
     // Show the modal when the button is clicked
     $('#openModalButton').on('click', function () {
       var noRegistrasi = $('#noRegistrasi').val();
+
       if (noRegistrasi == '') {
-        $('#modalMessage').html('No registrasi yang kamu masukan salah')
+        $('#modalMessage').html('No registrasi yang kamu masukan salah');
         $('.tiket-image').hide();
         $('.failed-tiket-image').show();
         $('#claim-button').hide();
         return false;
       }
-      if (noRegistrasi == 123456) {
-        $('#modalMessage').html(' Selamat! kamu lolos ke babak selanjutnya. Dan berhak mendapatkan hadiah. Download tiket untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekat mu');
-        $('.tiket-image').show();
-        $('.failed-tiket-image').hide();
-        $('#claim-button').show();
 
-      } else {
-        $('#modalMessage').html(' Maaf, kamu tidak lolos ke babak selanjutnya');
-        $('.tiket-image').hide();
-        $('.failed-tiket-image').show();
-        $('#claim-button').hide();
+      // Send GET request to the API
+      $.ajax({
+        url: 'https://api.ganeshaoperation.com/api/v1/event/tcr/checkpass',
+        method: 'GET',
+        data: JSON.stringify({ noreg: noRegistrasi }),
+        success: function (response) {
+          if (response.message === "Peserta not found.") {
+            $('#modalMessage').html('Maaf, Kamu belum bisa lolos ke babak selanjutnya.');
+            $('.tiket-image').hide();
+            $('.failed-tiket-image').show();
+            $('#claim-button').hide();
+          } else {
+            // Success case: Display the user's name and round details
+            var nama = response.nama;
+            var lolosRounds = response.lolos.join(', '); // Combine the rounds into a single string
 
-      }
-      $('#ticketModal').fadeIn();
+            $('#modalMessage').html(
+              'Selamat, ' + nama + '! Kamu lolos ke: ' + lolosRounds + '.<br> Download tiket untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekat mu.'
+            );
+            $('.tiket-image').show();
+            $('.failed-tiket-image').hide();
+            $('#claim-button').show();
+          }
+          $('#ticketModal').fadeIn();
+        },
+        error: function () {
+          $('#modalMessage').html('Terjadi kesalahan. Silakan coba');
+          $('.tiket-image').hide();
+          $('.failed-tiket-image').show();
+          $('#claim-button').hide();
+          $('#ticketModal').fadeIn();
+        }
+      });
     });
 
     // Close the modal when the close button is clicked
@@ -676,6 +697,8 @@
       }
     });
   });
+
+
 
 
 </script>
