@@ -226,12 +226,12 @@
         <div class="section-heading">
           <h2>Are you the next <span>Champion? </span></h2>
         </div>
-        <form action="#" class="subscribe-form">
+        <!-- <form action="#" class="subscribe-form">
           <div class="btn-group">
             <input class="form-control" type="text" name="noRegistrsi" placeholder="Masukan Noreg" id="noRegistrasi" />
             <button class="default-btn" id="openModalButton">Check Hasil</button>
           </div>
-        </form>
+        </form> -->
         <div class="hero-element">
           <img class="logo-hero" src="assets/img/tcr/logo-champion-race.png"
             alt="The Champion Race Ganesha Operation" />
@@ -653,7 +653,11 @@
       // Send GET request to the API
       $.ajax({
         url: 'https://api.ganeshaoperation.com/api/v1/event/tcr/checkpass',
-        method: 'GET',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': '32'
+        },
         data: JSON.stringify({ noreg: noRegistrasi }),
         success: function (response) {
           if (response.message === "Peserta not found.") {
@@ -664,14 +668,15 @@
           } else {
             // Success case: Display the user's name and round details
             var nama = response.nama;
-            var lolosRounds = response.lolos.join(', '); // Combine the rounds into a single string
+            var noregPemenang = response.noreg;
+            var lolosRounds = response.lolos.join('<br> '); // Combine the rounds into a single string
 
             $('#modalMessage').html(
-              'Selamat, ' + nama + '! Kamu lolos ke: ' + lolosRounds + '.<br> Download tiket untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekat mu.'
+              'Selamat, ' + nama + '! <br> No Registrasi : ' + noregPemenang + '<br> Kamu lolos ke: <br> ' + lolosRounds + '.<br> Tunjukan nomor registrasi kamu untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekatmu.'
             );
             $('.tiket-image').show();
             $('.failed-tiket-image').hide();
-            $('#claim-button').show();
+            // $('#claim-button').show();
           }
           $('#ticketModal').fadeIn();
         },
