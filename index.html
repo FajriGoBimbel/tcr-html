@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="assets/css/elements.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <style>
   .slide {
@@ -190,6 +191,165 @@
       /* Make the button take up full width */
     }
   }
+
+  .babak-display {
+
+    position: absolute;
+
+    top: 25%;
+    /* Use percentage for vertical positioning */
+
+    left: 43%;
+    /* Center horizontally */
+
+    transform: translate(-50%, -50%);
+    /* Center alignment */
+
+    font-size: 5vw;
+    /* Use viewport width for responsive font size */
+
+    font-weight: bold;
+
+    color: #FDD301;
+
+    z-index: 2;
+
+  }
+
+  .noreg-display {
+
+    position: absolute;
+
+    top: 32%;
+    /* Use percentage for vertical positioning */
+
+    left: 43%;
+    /* Center horizontally */
+
+    transform: translate(-50%, -50%);
+    /* Center alignment */
+
+    font-size: 2vw;
+    /* Use viewport width for responsive font size */
+
+    font-weight: bold;
+
+    color: #FDD301;
+
+    z-index: 2;
+
+  }
+
+
+  @media (max-width: 768px) {
+
+    .noreg-display {
+      top: 26%;
+      /* Adjust top position for smaller screens */
+      font-size: 5vw;
+      /* Adjust font size relative to viewport width */
+      /* You might want to add more styles for better responsiveness */
+      line-height: 1.2;
+      /* Adjust line height for readability */
+      text-align: center;
+      /* Center align text */
+    }
+
+    .babak-display {
+      top: 23%;
+      /* Adjust top position for smaller screens */
+      font-size: 2vw;
+      /* Adjust font size relative to viewport width */
+      /* Additional styles can improve the appearance */
+      line-height: 1.2;
+      /* Adjust line height for readability */
+      text-align: center;
+      /* Center align text */
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .noreg-display {
+      top: 23%;
+      /* Adjust top position for smaller screens */
+      font-size: 5vw;
+      /* Adjust font size relative to viewport width */
+      /* You might want to add more styles for better responsiveness */
+      line-height: 1.2;
+      /* Adjust line height for readability */
+      text-align: center;
+      /* Center align text */
+    }
+
+    .babak-display {
+      top: 19%;
+      /* Adjust top position for smaller screens */
+      font-size: 1vw;
+      /* Adjust font size relative to viewport width */
+      /* Additional styles can improve the appearance */
+      line-height: 1.2;
+      /* Adjust line height for readability */
+      text-align: center;
+      /* Center align text */
+    }
+
+  }
+
+  @media (max-width: 320px) {
+
+    .noreg-display {
+      top: 20%;
+      /* Adjust top position for smaller screens */
+      font-size: 10px;
+      /* Adjust font size relative to viewport width */
+      /* You might want to add more styles for better responsiveness */
+      line-height: 1.2;
+      /* Adjust line height for readability */
+      text-align: center;
+      /* Center align text */
+    }
+
+    .babak-display {
+      top: 16%;
+      /* Adjust top position for smaller screens */
+      font-size: 10px;
+      /* Adjust font size relative to viewport width */
+      /* Additional styles can improve the appearance */
+      line-height: 1;
+      /* Adjust line height for readability */
+      text-align: center;
+      /* Center align text */
+    }
+
+  }
+
+
+  .confetti-canvas {
+    position: fixed;
+    /* Fix it to overlay modal content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    /* Ensure it's above the modal */
+    pointer-events: none;
+    /* Prevent interactions with the confetti canvas */
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    /* Ensure the modal is above other elements */
+  }
 </style>
 
 <body>
@@ -225,13 +385,13 @@
           <h2>Are you the next <span>Champion? </span></h2>
         </div>
         <br><br>
-        <!-- <form action="#" class="subscribe-form">
+        <form action="#" class="subscribe-form">
           <div class="btn-group">
             <input class="form-control" type="text" name="noRegistrsi" placeholder="Masukan Noreg" id="noRegistrasi" />
             <button class="default-btn" id="openModalButton">Check Hasil</button>
           </div>
-        </form> 
-      -->
+        </form>
+
         <div class="hero-element">
           <img class="logo-hero" src="assets/img/tcr/logo-champion-race.png"
             alt="The Champion Race Ganesha Operation" />
@@ -264,22 +424,21 @@
             <p style="font-size: 16px;">
               The Champion Race merupakan kompetisi e-sport pendidikan pertama di Indonesia yang diselenggarakan oleh
               Ganesha Operation. Mengusung konsep selayaknya e-sport, The Champion Race diperkenalkan dengan istilah
-              Ganesha Operation E-Sport atau <b>GO E-Sport</b>. Melalui inovasi pembelajaran berbasis teknologi ini,
+              <b>Ganesha Operation E-Sport atau GO E-Sport</b>. Melalui inovasi pembelajaran berbasis teknologi ini,
               kamu akan
-              bertanding dengan SobatGO lainnya se-Indonesia dari mulai siswa SD, SMP, hingga SMA untuk mengerjakan soal
+              bertanding dengan SobatGO lainnya se-Indonesia sesuai jenjang pendidikan kamu untuk mengerjakan soal
               secara real-time melalui aplikasi GO Expert.
-
-              <br>
-              Event The Champion Race ini berhasil membuat Ganesha Operation dianugerahi rekor MURI sebagai “<b>Bimbel
-                Pertama yang Menyelenggarakan E-Sport Pendidikan</b>”.
+              Event The Champion Race ini berhasil membuat Ganesha Operation dianugerahi rekor MURI sebagai <b>“Bimbel
+                Pertama yang Menyelenggarakan E-Sport Pendidikan”</b>
 
             </p>
             <p style="font-size: 16px;">
-              Berbeda dengan tahun sebelumnya, The Champion Race 2025 mengikutsertakan siswa SD sebagai salah satu
-              kategori yang akan memperebutkan gelar juara. Pemenang dari setiap perwakilan daerah beserta pendampingnya
-              akan diberangkatkan ke Bandung untuk bertanding secara langsung di babak final sesuai dengan tingkat
-              sekolah. Selain berkesempatan meraih gelar juara, para finalis juga memperebutkan hadiah menarik seperti
-              motor, laptop, tablet, dan tabungan pendidikan.
+              Berbeda dengan tahun-tahun sebelumnya, The Champion Race 2025 tidak hanya diperuntukkan bagi siswa SMP dan
+              SMA. Tahun ini, siswa SD juga diikutsertakan sebagai salah satu kategori yang akan memperebutkan gelar
+              juara. Pemenang dari setiap perwakilan daerah beserta pendampingnya akan diberangkatkan ke Bandung untuk
+              bertanding secara langsung di babak final sesuai dengan tingkat sekolah. Selain berkesempatan meraih gelar
+              juara, para finalis juga memperebutkan hadiah menarik seperti motor, laptop, tablet, dan tabungan
+              pendidikan.
 
             </p>
             <p style="color: #db1717; font-size: 32px;"><b>So, are you the next champion?</b>
@@ -595,16 +754,20 @@
   <div class="modal" id="ticketModal">
     <div class="modal-content">
       <div class="modal-header">
-        <!-- <h2>Selamat</h2>
-        <span class="close-button" id="closeModalButton">&times;</span> -->
       </div>
       <div class="modal-body">
-        <img src="assets/img/tiket.jpg" alt="Ticket" class="tiket-image" style="display: none;" />
+        <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+        <canvas id="ticketCanvas" style="display: none;"></canvas>
+        <p id="babakDisplay" class="babak-display" style="display: none; color: #FDD301;"></p>
+        <p id="namaDisplay" class="nama-display" style="display: none; color: #FDD301;"></p>
+        <p id="noregDisplay" class="noreg-display" style="display: none; color: #FDD301;"></p>
+        <img src="assets/img/TiketTCR1.png" alt="Ticket" class="tiket-image" style="display: none;" />
         <img src="assets/img/failed.png" alt="Ticket" class="failed-tiket-image" style="display: none;" />
         <p id="modalMessage"></p>
       </div>
       <div class="modal-footer">
         <button class="claim-button" id="claim-button" style="display: none;">Download Tiket</button>
+        <button class="print-button" id="print-button" style="display: none;">Cetak Tiket</button>
       </div>
     </div>
   </div>
@@ -672,11 +835,25 @@
             var lolosRounds = response.lolos.join('<br> '); // Combine the rounds into a single string
 
             $('#modalMessage').html(
-              'Selamat, ' + nama + '! <br> No Registrasi : ' + noregPemenang + '<br> Kamu lolos ke: <br> ' + lolosRounds + '.<br> Tunjukan nomor registrasi kamu untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekatmu.'
+              'Congratulation<br> ' + nama + '! <p> No Registrasi : ' + noregPemenang + '<p> Kamu lolos ke: ' + lolosRounds + '</p> Tunjukan nomor registrasi kamu untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekatmu.'
             );
             $('.tiket-image').show();
             $('.failed-tiket-image').hide();
-            // $('#claim-button').show();
+
+            $('#noregDisplay').html(noregPemenang);
+            $('#noregDisplay').show();
+            $('#babakDisplay').html(lolosRounds);
+            $('#babakDisplay').show();
+            // $('#namaDisplay').html(nama);
+            // $('#namaDisplay').show();
+
+            $('#claim-button').show();
+            confetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.6 }
+
+            });
           }
           $('#ticketModal').fadeIn();
         },
@@ -702,6 +879,63 @@
       }
     });
   });
+
+  $('#claim-button').on('click', function () {
+    var ticketImageSrc = $('.tiket-image').attr('src');
+    var babakText = $('#babakDisplay').text(); // Ambil babak
+    var noregText = $('#noregDisplay').text(); // Ambil nomor registrasi
+    var canvas = document.getElementById('ticketCanvas');
+    var ctx = canvas.getContext('2d');
+
+    // Mengatur ukuran canvas sesuai dengan gambar tiket
+    var ticketImage = new Image();
+    ticketImage.src = ticketImageSrc;
+    ticketImage.onload = function () {
+      canvas.width = ticketImage.width;
+      canvas.height = ticketImage.height;
+
+      // Menggambar gambar tiket di canvas
+      ctx.drawImage(ticketImage, 0, 0);
+
+      // Mengatur font dan warna untuk babakDisplay
+      ctx.font = 'bold 42px Arial';
+      ctx.fillStyle = '#FDD301'; // Ganti warna sesuai kebutuhan
+      ctx.textAlign = 'center';
+
+      // Menentukan posisi babakDisplay dengan margin
+      var babakMarginTop = 200; // Top margin for babakDisplay
+      var babakLeftMargin = canvas.width * 0.45; // Left margin (45% of canvas width)
+      var babakY = babakMarginTop; // Posisi vertikal
+
+      // Menulis babakDisplay di canvas
+      ctx.fillText(babakText, babakLeftMargin, babakY);
+
+      // Mengatur font dan warna untuk nomor registrasi
+      ctx.font = 'bold 32px Arial';
+      ctx.fillStyle = '#FDD301'; // Ganti warna sesuai kebutuhan
+      ctx.textAlign = 'center';
+
+      // Menentukan posisi nomor registrasi dengan margin
+      var noregMarginTop = 250; // Top margin for noregDisplay
+      var noregLeftMargin = canvas.width * 0.45; // Left margin (45% of canvas width)
+      var noregY = noregMarginTop; // Posisi vertikal
+
+      // Menulis nomor registrasi di canvas
+      ctx.fillText(noregText, noregLeftMargin, noregY);
+
+      // Mengunduh gambar dari canvas
+      var link = document.createElement('a');
+      link.href = canvas.toDataURL('image/png');
+      link.download = 'tcr_ticket.jpg'; // Nama file yang akan diunduh
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+  });
+
+
+
+
 
 
 
