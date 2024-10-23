@@ -230,7 +230,7 @@
             <input class="form-control" type="text" name="noRegistrsi" placeholder="Masukan Noreg" id="noRegistrasi" />
             <button class="default-btn" id="openModalButton">Check Hasil</button>
           </div>
-        </form> -->
+        </form> 
         <div class="hero-element">
           <img class="logo-hero" src="assets/img/tcr/logo-champion-race.png"
             alt="The Champion Race Ganesha Operation" />
@@ -238,17 +238,17 @@
           <div class="shape-wrap">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
-            <!-- <div class="shape shape-3"></div>
+             <div class="shape shape-3"></div>
               <div class="shape shape-4"></div> -->
-          </div>
-          <div class="shape-wrap right">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <!-- <div class="shape shape-3"></div>
-              <div class="shape shape-4"></div> -->
-          </div>
-        </div>
       </div>
+      <div class="shape-wrap right">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <!-- <div class="shape shape-3"></div>
+              <div class="shape shape-4"></div> -->
+      </div>
+    </div>
+    </div>
     </div>
     <div class="gradiant-border"></div>
   </section>
@@ -652,7 +652,11 @@
       // Send GET request to the API
       $.ajax({
         url: 'https://api.ganeshaoperation.com/api/v1/event/tcr/checkpass',
-        method: 'GET',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': '32'
+        },
         data: JSON.stringify({ noreg: noRegistrasi }),
         success: function (response) {
           if (response.message === "Peserta not found.") {
@@ -663,14 +667,15 @@
           } else {
             // Success case: Display the user's name and round details
             var nama = response.nama;
-            var lolosRounds = response.lolos.join(', '); // Combine the rounds into a single string
+            var noregPemenang = response.noreg;
+            var lolosRounds = response.lolos.join('<br> '); // Combine the rounds into a single string
 
             $('#modalMessage').html(
-              'Selamat, ' + nama + '! Kamu lolos ke: ' + lolosRounds + '.<br> Download tiket untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekat mu.'
+              'Selamat, ' + nama + '! <br> No Registrasi : ' + noregPemenang + '<br> Kamu lolos ke: <br> ' + lolosRounds + '.<br> Tunjukan nomor registrasi kamu untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekatmu.'
             );
             $('.tiket-image').show();
             $('.failed-tiket-image').hide();
-            $('#claim-button').show();
+            // $('#claim-button').show();
           }
           $('#ticketModal').fadeIn();
         },
