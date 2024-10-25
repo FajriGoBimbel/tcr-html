@@ -385,14 +385,14 @@
           <h2>Are you the next <span>Champion? </span></h2>
         </div>
         <br><br>
-       
-	 <form action="#" class="subscribe-form">
+
+        <form action="#" class="subscribe-form">
           <div class="btn-group">
             <input class="form-control" type="text" name="noRegistrsi" placeholder="Masukan Noreg" id="noRegistrasi" />
             <button class="default-btn" id="openModalButton">Check Hasil</button>
           </div>
         </form>
-	
+
 
         <div class="hero-element">
           <img class="logo-hero" src="assets/img/tcr/logo-champion-race.png"
@@ -830,6 +830,10 @@
             $('.tiket-image').hide();
             $('.failed-tiket-image').hide();
             $('#claim-button').hide();
+            $('#noregDisplay').hide();
+            $('#babakDisplay').hide();
+
+
           } else {
             // Success case: Display the user's name and round details
             var nama = response.nama;
