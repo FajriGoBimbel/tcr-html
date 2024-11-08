@@ -163,164 +163,167 @@
   }
 
   /* Mobile view adjustments */
+  /* @media (max-width: 768px) {
+    
+  } */
+
+  .babak-display {
+    position: absolute;
+    top: 27%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 5vw;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .babak-display-2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 5vw;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .babak-display-3 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 5vw;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Large Screens */
+  @media (min-width: 1200px) {
+    .babak-display {
+      top: 20%;
+      font-size: 4vw;
+    }
+
+    .babak-display-2 {
+      top: 19%;
+      font-size: 4vw;
+      font-weight: bold;
+    }
+
+    .babak-display-2 {
+      top: 28%;
+      font-size: 4vw;
+      font-weight: bold;
+    }
+  }
+
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .babak-display {
+      top: 26%;
+      font-size: 5vw;
+    }
+
+    .babak-display-2 {
+      top: 10%;
+      font-size: 5vw;
+    }
+
+    .babak-display-3 {
+      top: 10%;
+      font-size: 5vw;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .babak-display {
+      top: 35%;
+      font-size: 6vw;
+    }
+
+    .babak-display-2 {
+      top: 10%;
+      font-size: 5vw;
+    }
+
+    .babak-display-3 {
+      top: 10%;
+      font-size: 5vw;
+    }
+  }
+
+  /* Extra Small Screens (Small Phones) */
+  @media (max-width: 480px) {
+    .babak-display {
+      top: 25%;
+      font-size: 10px !important;
+    }
+
+    .babak-display-2 {
+      top: 25%;
+      font-size: 10px !important;
+    }
+
+    .babak-display-3 {
+      top: 23%;
+      font-size: 10px !important;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .babak-display {
+      top: 20%;
+      font-size: 10px !important;
+    }
+
+    .babak-display-2 {
+      top: 22%;
+      font-size: 10px !important;
+    }
+
+    .babak-display-3 {
+      top: 23%;
+      font-size: 9px !important;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .babak-display {
+      top: 17%;
+      font-size: 8px !important;
+    }
+  }
+
+
+
+  /* Tablet View */
   @media (max-width: 768px) {
     .subscribe-form {
       flex-direction: column;
-      /* Stack items vertically */
     }
 
     .subscribe-form .btn-group {
       flex-direction: column;
-      /* Stack the input and button vertically */
     }
 
     .subscribe-form .form-control {
       width: 100%;
-      /* Make the input take up full width */
       margin-right: 0;
-      /* Remove margin for mobile view */
       margin-bottom: 10px;
-      /* Add margin below the input for spacing */
     }
 
     .subscribe-form .default-btn {
       width: 100%;
-      /* Make the button take up full width */
     }
-  }
 
-  .babak-display {
-
-    position: absolute;
-
-    top: 25%;
-    /* Use percentage for vertical positioning */
-
-    left: 43%;
-    /* Center horizontally */
-
-    transform: translate(-50%, -50%);
-    /* Center alignment */
-
-    font-size: 5vw;
-    /* Use viewport width for responsive font size */
-
-    font-weight: bold;
-
-    color: #FDD301;
-
-    z-index: 2;
 
   }
 
-  .noreg-display {
-
-    position: absolute;
-
-    top: 32%;
-    /* Use percentage for vertical positioning */
-
-    left: 43%;
-    /* Center horizontally */
-
-    transform: translate(-50%, -50%);
-    /* Center alignment */
-
-    font-size: 2vw;
-    /* Use viewport width for responsive font size */
-
-    font-weight: bold;
-
-    color: #FDD301;
-
-    z-index: 2;
-
-  }
-
-
-  @media (max-width: 768px) {
-
-    .noreg-display {
-      top: 26%;
-      /* Adjust top position for smaller screens */
-      font-size: 5vw;
-      /* Adjust font size relative to viewport width */
-      /* You might want to add more styles for better responsiveness */
-      line-height: 1.2;
-      /* Adjust line height for readability */
-      text-align: center;
-      /* Center align text */
-    }
-
-    .babak-display {
-      top: 23%;
-      /* Adjust top position for smaller screens */
-      font-size: 2vw;
-      /* Adjust font size relative to viewport width */
-      /* Additional styles can improve the appearance */
-      line-height: 1.2;
-      /* Adjust line height for readability */
-      text-align: center;
-      /* Center align text */
-    }
-
-  }
-
-  @media (max-width: 480px) {
-
-    .noreg-display {
-      top: 23%;
-      /* Adjust top position for smaller screens */
-      font-size: 5vw;
-      /* Adjust font size relative to viewport width */
-      /* You might want to add more styles for better responsiveness */
-      line-height: 1.2;
-      /* Adjust line height for readability */
-      text-align: center;
-      /* Center align text */
-    }
-
-    .babak-display {
-      top: 19%;
-      /* Adjust top position for smaller screens */
-      font-size: 1vw;
-      /* Adjust font size relative to viewport width */
-      /* Additional styles can improve the appearance */
-      line-height: 1.2;
-      /* Adjust line height for readability */
-      text-align: center;
-      /* Center align text */
-    }
-
-  }
-
-  @media (max-width: 320px) {
-
-    .noreg-display {
-      top: 20%;
-      /* Adjust top position for smaller screens */
-      font-size: 10px;
-      /* Adjust font size relative to viewport width */
-      /* You might want to add more styles for better responsiveness */
-      line-height: 1.2;
-      /* Adjust line height for readability */
-      text-align: center;
-      /* Center align text */
-    }
-
-    .babak-display {
-      top: 16%;
-      /* Adjust top position for smaller screens */
-      font-size: 10px;
-      /* Adjust font size relative to viewport width */
-      /* Additional styles can improve the appearance */
-      line-height: 1;
-      /* Adjust line height for readability */
-      text-align: center;
-      /* Center align text */
-    }
-
-  }
 
 
   .confetti-canvas {
@@ -738,15 +741,16 @@
       <div class="modal-body">
         <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
         <canvas id="ticketCanvas" style="display: none;"></canvas>
-        <p id="babakDisplay" class="babak-display" style="display: none; color: #FDD301;"></p>
-        <p id="namaDisplay" class="nama-display" style="display: none; color: #FDD301;"></p>
-        <p id="noregDisplay" class="noreg-display" style="display: none; color: #FDD301;"></p>
-        <img src="assets/img/TiketTCR1.png" alt="Ticket" class="tiket-image" style="display: none;" />
+        <p id="babakDisplay" class="babak-display babak-display-2 babak-display-3" style="display: none; "></p>
+        <!-- <p id="namaDisplay" class="nama-display" style="display: none; color: #FDD301;"></p>
+        <p id="noregDisplay" class="noreg-display" style="display: none; color: #FDD301;"></p> -->
+        <p id="babakIDDisplay" class="babak-id-display" style="display: none;"></p>
+        <img src="assets/img/sertifikat-1.png" alt="Ticket" class="tiket-image" style="display: none;" />
         <img src="assets/img/failed.png" alt="Ticket" class="failed-tiket-image" style="display: none;" />
         <p id="modalMessage"></p>
       </div>
       <div class="modal-footer">
-        <button class="claim-button" id="claim-button" style="display: none;">Download Tiket</button>
+        <button class="claim-button" id="claim-button" style="display: none;">Download Sertifikat</button>
         <button class="print-button" id="print-button" style="display: none;">Cetak Tiket</button>
       </div>
     </div>
@@ -781,6 +785,8 @@
 </body>
 <script>
   $(document).ready(function () {
+    var babakID; // Declare babakID outside to make it accessible
+
     // Show the modal when the button is clicked
     $('#openModalButton').on('click', function () {
       var noRegistrasi = $('#noRegistrasi').val();
@@ -810,33 +816,48 @@
             $('#claim-button').hide();
             $('#noregDisplay').hide();
             $('#babakDisplay').hide();
-
-
           } else {
             // Success case: Display the user's name and round details
             var nama = response.nama;
             var noregPemenang = response.noreg;
-            var lolosRounds = response.lolos.join('<br> '); // Combine the rounds into a single string
+            var lolosRounds = response.lolos.join('<br> ');
+            babakID = response.babak; // Set babakID here
 
             $('#modalMessage').html(
-              'Congratulation<br> ' + nama + '! <p> No Registrasi : ' + noregPemenang + '<p> Kamu lolos ke: ' + lolosRounds + '</p> Tunjukan nomor registrasi kamu untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekatmu.'
+              'Congratulation<br> ' + nama + '! <p> No Registrasi : ' + noregPemenang +
+              '<p> Kamu lolos ke: ' + lolosRounds + '</p> Tunjukan nomor registrasi kamu untuk ditukarkan menjadi hadiah yang menarik di unit atau cabang terdekatmu.'
             );
+
+            if (babakID == 3) {
+              $('.tiket-image').attr('src', 'assets/img/sertifikat-1.png').show();
+              $('.babak-display').css('color', '#FDD301');
+              $('.babak-display').css('font-size', '14px');
+
+            } else if (babakID == 4) {
+              $('.tiket-image').attr('src', 'assets/img/sertifikat-2.png').show();
+              $('.babak-display-2').css('color', '#1a1a1a');
+              $('.babak-display-2').css('font-size', '14px');
+            } else if (babakID == 5) {
+              $('.tiket-image').attr('src', 'assets/img/sertifikat-3.png').show();
+              $('.babak-display-3').css('color', '#ffffff');
+              $('.babak-display-3').css('font-size', '14px');
+            } else {
+              $('.tiket-image').hide();
+
+            }
+
             $('.tiket-image').show();
             $('.failed-tiket-image').hide();
 
             $('#noregDisplay').html(noregPemenang);
-            $('#noregDisplay').show();
-            $('#babakDisplay').html(lolosRounds);
+            $('#babakDisplay').html(nama);
             $('#babakDisplay').show();
-            // $('#namaDisplay').html(nama);
-            // $('#namaDisplay').show();
 
             $('#claim-button').show();
             confetti({
               particleCount: 100,
               spread: 70,
               origin: { y: 0.6 }
-
             });
           }
           $('#ticketModal').fadeIn();
@@ -862,60 +883,78 @@
         $('#ticketModal').fadeOut();
       }
     });
-  });
 
-  $('#claim-button').on('click', function () {
-    var ticketImageSrc = $('.tiket-image').attr('src');
-    var babakText = $('#babakDisplay').text(); // Ambil babak
-    var noregText = $('#noregDisplay').text(); // Ambil nomor registrasi
-    var canvas = document.getElementById('ticketCanvas');
-    var ctx = canvas.getContext('2d');
+    // Click event listener for the claim button
+    $('#claim-button').on('click', function () {
+      var ticketImageSrc = $('.tiket-image').attr('src');
+      var babakText = $('#babakDisplay').text(); // Get babak text
 
-    // Mengatur ukuran canvas sesuai dengan gambar tiket
-    var ticketImage = new Image();
-    ticketImage.src = ticketImageSrc;
-    ticketImage.onload = function () {
-      canvas.width = ticketImage.width;
-      canvas.height = ticketImage.height;
+      // Alert babakID to confirm it's accessible here
 
-      // Menggambar gambar tiket di canvas
+      var canvas = document.getElementById('ticketCanvas');
+      var ctx = canvas.getContext('2d');
+
+      // Set the canvas size based on the ticket image
+      var ticketImage = new Image();
+      ticketImage.src = ticketImageSrc;
+      ticketImage.onload = function () {
+        canvas.width = ticketImage.width;
+        canvas.height = ticketImage.height;
+
+        // Call the function to draw content on the canvas
+        sertifikatDownloadSemifinal1(ctx, canvas, ticketImage, babakText, babakID);
+
+        // Download the image from the canvas
+        var link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'tcr_sertifikat.jpg'; // File name for download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+    });
+
+    function sertifikatDownloadSemifinal1(ctx, canvas, ticketImage, babakText, babakID) {
+      // Draw the ticket image
       ctx.drawImage(ticketImage, 0, 0);
 
-      // Mengatur font dan warna untuk babakDisplay
-      ctx.font = 'bold 42px Arial';
-      ctx.fillStyle = '#FDD301'; // Ganti warna sesuai kebutuhan
-      ctx.textAlign = 'center';
+      // Set font and color for babakDisplay
+      if (babakID == 3) {
+        ctx.font = 'bold 36px Arial';
+        ctx.fillStyle = '#FDD301'; // Change color as needed
+        ctx.textAlign = 'center';
+        var babakMarginTop = 290; // Top margin for babakDisplay
+        var babakLeftMargin = canvas.width * 0.40; // Left margin (40% of canvas width)
+        var babakY = babakMarginTop; // Vertical position
+      } else if (babakID == 4) {
 
-      // Menentukan posisi babakDisplay dengan margin
-      var babakMarginTop = 200; // Top margin for babakDisplay
-      var babakLeftMargin = canvas.width * 0.45; // Left margin (45% of canvas width)
-      var babakY = babakMarginTop; // Posisi vertikal
+        ctx.font = 'bold 32px Arial';
+        ctx.fillStyle = '#1a1a1a'; // Change color as needed
+        ctx.textAlign = 'center';
+        // Define babakDisplay position with margins
+        var babakMarginTop = 320; // Top margin for babakDisplay
+        var babakLeftMargin = canvas.width * 0.50; // Left margin (40% of canvas width)
+        var babakY = babakMarginTop; // Vertical position
 
-      // Menulis babakDisplay di canvas
+      } else {
+        ctx.font = 'bold 36px Arial';
+        ctx.fillStyle = '#ffffff'; // Change color as needed
+        ctx.textAlign = 'center';
+        // Define babakDisplay position with margins
+        var babakMarginTop = 310; // Top margin for babakDisplay
+        var babakLeftMargin = canvas.width * 0.50; // Left margin (40% of canvas width)
+        var babakY = babakMarginTop; // Vertical position
+      }
+
+
+      // Write babakDisplay on the canvas
       ctx.fillText(babakText, babakLeftMargin, babakY);
 
-      // Mengatur font dan warna untuk nomor registrasi
-      ctx.font = 'bold 32px Arial';
-      ctx.fillStyle = '#FDD301'; // Ganti warna sesuai kebutuhan
-      ctx.textAlign = 'center';
 
-      // Menentukan posisi nomor registrasi dengan margin
-      var noregMarginTop = 250; // Top margin for noregDisplay
-      var noregLeftMargin = canvas.width * 0.45; // Left margin (45% of canvas width)
-      var noregY = noregMarginTop; // Posisi vertikal
-
-      // Menulis nomor registrasi di canvas
-      ctx.fillText(noregText, noregLeftMargin, noregY);
-
-      // Mengunduh gambar dari canvas
-      var link = document.createElement('a');
-      link.href = canvas.toDataURL('image/png');
-      link.download = 'tcr_ticket.jpg'; // Nama file yang akan diunduh
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    };
+    }
   });
+
+
 
 
 </script>
